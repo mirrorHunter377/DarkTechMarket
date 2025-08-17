@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkNet Market :: Simulación CTF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <link href="assets/fonts/roboto.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+    
+</head>
+<style>
+    .header-inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-inline {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-controls {
+    display: flex;
+    gap: 10px;
+}
+.main-nav{
+        margin: 0px 100px;
+}
+/* Estilos adicionales para mantener la alineación vertical */
+.logo-text, .logo-subtitle {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.forum-footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 40px 0 0;
+    border-top: 1px solid #333;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #555;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-logo h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.footer-logo h3 span {
+    color: #777;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    margin-top: 3px;
+    color: #555;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #777;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #fffb00;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.footer-credits p {
+    margin: 5px 0 0;
+    font-size: 0.8rem;
+}
+
+.footer-credits a {
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.disclaimer-banner{
+    background-color: #fffb00;
+}
+.maletin-image {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 10px;
+}
+</style>
+<body>
+    <div class="disclaimer-banner">
+        <p>⚠ ADVERTENCIA: Si este sitio deja de estar disponible acceder a http://http://rpvprgak4txfwilfnsbdd75rqwbmxvgrrlgxgss6itfl6qhqawy23zyd.onion/ ⚠</p>
+    </div>
+    
+    <header class="forum-header">
+    <div class="container">
+        <div class="header-inline">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="assets/images/logo.png" alt="DarkNet Market" class="logo-img">
+                <div>
+                    <h1 class="logo-text">DarkTech <span>Market</span></h1>
+                    
+                </div>
+            </div>
+
+            <!-- Navegación -->
+            <nav class="main-nav">
+                <ul class="nav-inline">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="leaks.html">Leaks</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    
+                </ul>
+            </nav>
+
+            <!-- Controles de usuario -->
+            <div class="user-controls">
+                <a href="#" class="btn-login">Iniciar sesión</a>
+                <a href="#" class="btn-register">Registrarse</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div class="container main-container">
+        <aside class="sidebar">
+            <div class="widget stats-widget">
+                <h3>Estadísticas del foro</h3>
+                <ul>
+                    <li>Usuarios: 5,127</li>
+                    <li>Hilos: 13,892</li>
+                    <li>Posts: 102,456</li>
+                    <li>Vendedores verificados: 53</li>
+                </ul>
+            </div>
+            
+            <div class="widget top-vendors">
+                <h3>Vendedores destacados</h3>
+                <ol>
+                    <li><a href="user/GhostProxy66.html">GhostProxy66</a> ⭐⭐⭐⭐⭐ (87 ventas)</li>
+                    <li><a href="user/DataVendor">DataVendor</a> ⭐⭐⭐⭐ (107 ventas)</li>
+                    <li><a href="user/MalwareMaster">MalwareMaster</a> ⭐⭐⭐⭐ (89 ventas)</li>
+                    <li><a href="user/ZeroDayGuy">ZeroDayGuy</a> ⭐⭐⭐⭐ (65 ventas)</li>
+                    <li><a href="user/PhantomSeller">PhantomSeller</a> ⭐⭐⭐ (52 ventas)</li>
+                </ol>
+            </div>
+            
+            <div class="widget recent-threads">
+                <h3>Hilos recientes</h3>
+                <ul>
+                    <li><a href="#" class="thread-link" data-thread="nuclear-codes">Códigos nucleares</a></li>
+                    <li><a href="#" class="thread-link" data-thread="database-leak">Bases de datos robadas</a></li>
+                    <li><a href="#" class="thread-link" data-thread="weapons-sale">Venta de armas</a></li>
+                    <li><a href="#" class="thread-link" data-thread="drugs-market">Mercado de drogas</a></li>
+                    <li><a href="#" class="thread-link" data-thread="hacking-services">Servicios hacking</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="announcement">
+                <h2><span class="icon-flame"></span> Subasta especial: Maletín con códigos de acceso nuclear</h2>
+                <p>Publicado por <a href="user/GhostProxy66.html">GhostProxy66</a>. Subasta activa hasta hoy a las 00:00 UTC. <a href="#" class="thread-link" data-thread="nuclear-codes">Participar ahora</a></p>
+            </section>
+            
+            <section class="thread-list">
+                <div class="thread-header">
+                    <h2>Hilos destacados</h2>
+                    <div class="sort-options">
+                        <span>Ordenar por:</span>
+                        <select>
+                            <option>Recientes</option>
+                            <option>Populares</option>
+                            <option>Comentarios</option>
+                            <option>Precio (asc)</option>
+                            <option>Precio (desc)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Hilo 1 - Nuclear Codes -->
+                <article class="thread">
+                    <div class="thread-author">
+                        <a href="user/GhostProxy66.html" class="user-avatar">
+                            <img src="assets/images/GhostProxy66.jpg" alt="GhostProxy66">
+                        </a>
+                        <div class="user-info">
+                            <a href="user/GhostProxy66.html" class="username">GhostProxy66</a>
+                            <span class="user-title">Vendedor Verificado</span>
+                            <div class="user-stats">
+                                <span>642 posts</span>
+                                <span>⭐ 4.8/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thread-content">
+                        <h3><a href="#" class="thread-link" data-thread="nuclear-codes">[SUBASTA] Maletín con códigos nucleares - Acceso completo</a></h3>
+                        <div class="thread-meta">
+                            <span class="tag nuclear-tag">ARMAMENTO</span>
+                            <span class="tag premium">Premium</span>
+                            <span class="tag auction">Subasta</span>
+                            <span class="thread-date">Publicado 21/08, 00:32</span>
+                        </div>
+                        
+                        <div class="thread-excerpt">
+                            <p>Oferta única: Maletín físico con códigos de acceso a sistemas de defensa nuclear. Incluye:</p>
+                            <ul>
+                                <li>Dispositivo de autenticación de dos factores</li>
+                                <li>Manual de procedimientos clasificados</li>
+                                <li>3 códigos de activación de 256 caracteres</li>
+                                <li>Coordenadas de instalaciones estratégicas</li>
+                            </ul>
+                            <p>Subasta activa en los comentarios hasta las 00:00 UTC. Precio inicial: $200,000 USD en BTC/XMR.</p>
+                        </div>
+                        
+                        <div class="thread-actions">
+                            <span class="thread-views">2,453 vistas</span>
+                            <span class="thread-comments">15 comentarios</span>
+                            <a href="#" class="btn-read-more thread-link" data-thread="nuclear-codes">Participar</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Hilo 2 - Database Leak -->
+                <article class="thread">
+                    <div class="thread-author">
+                        <a href="user/DataVendor" class="user-avatar">
+                            <img src="assets/images/DataVendor.jpg" alt="DataVendor">
+                        </a>
+                        <div class="user-info">
+                            <a href="user/DataVendor.html" class="username">DataVendor</a>
+                            <span class="user-title">Vendedor Verificado</span>
+                            <div class="user-stats">
+                                <span>845 posts</span>
+                                <span>⭐ 4.7/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thread-content">
+                        <h3><a href="#" class="thread-link" data-thread="database-leak">[VENTA] Base de datos - 50M cuentas premium</a></h3>
+                        <div class="thread-meta">
+                            <span class="tag leak">Leak</span>
+                            <span class="tag verified">Verificado</span>
+                            <span class="thread-date">Publicado ayer, 09:15</span>
+                        </div>
+                        
+                        <div class="thread-excerpt">
+                            <p>Dataset completo con emails y contraseñas de servicios premium. Incluye:</p>
+                            <ul>
+                                <li>Netflix, Disney+, HBO Max, Amazon Prime</li>
+                                <li>Cuentas de juegos (Steam, Epic, Origin)</li>
+                                <li>Suscripciones a software (Adobe, Microsoft)</li>
+                            </ul>
+                            <p class="price">Precio: <strong>2.5 BTC</strong> (o equivalente en XMR)</p>
+                        </div>
+                        
+                        <div class="thread-actions">
+                            <span class="thread-views">1,203 vistas</span>
+                            <span class="thread-comments">36 comentarios</span>
+                            <a href="#" class="btn-read-more thread-link" data-thread="database-leak">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Hilo 3 - Weapons Sale -->
+                <article class="thread">
+                    <div class="thread-author">
+                        <a href="user/ArmsDealer" class="user-avatar">
+                            <img src="assets/images/ArmsDealer.jpg" alt="ArmsDealer">
+                        </a>
+                        <div class="user-info">
+                            <a href="user/ArmsDealer" class="username">ArmsDealer</a>
+                            <span class="user-title">Vendedor Verificado</span>
+                            <div class="user-stats">
+                                <span>423 posts</span>
+                                <span>⭐ 4.5/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thread-content">
+                        <h3><a href="#" class="thread-link" data-thread="weapons-sale">[ENVÍO] Armas cortas y largas - Stock actualizado</a></h3>
+                        <div class="thread-meta">
+                            <span class="tag weapons">Armas</span>
+                            <span class="tag shipping">Envío</span>
+                            <span class="thread-date">Publicado hace 2 días, 18:40</span>
+                        </div>
+                        
+                        <div class="thread-excerpt">
+                            <p>Venta de armas de fuego con envío discreto a toda Europa:</p>
+                            <ul>
+                                <li>Pistolas: Glock 17, 19; Sig Sauer P226</li>
+                                <li>Rifles: AK-47, AR-15, M4A1</li>
+                                <li>Subfusiles: MP5, UMP, Scorpion</li>
+                                <li>Ammo disponible para todos los modelos</li>
+                            </ul>
+                            <p class="price">Precios desde <strong>1.5 BTC</strong> dependiendo del modelo.</p>
+                        </div>
+                        
+                        <div class="thread-actions">
+                            <span class="thread-views">2,145 vistas</span>
+                            <span class="thread-comments">63 comentarios</span>
+                            <a href="#" class="btn-read-more thread-link" data-thread="weapons-sale">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Hilo 4 - Drugs Market -->
+                <article class="thread">
+                    <div class="thread-author">
+                        <a href="user/ChemicalBrother" class="user-avatar">
+                            <img src="assets/images/ChemicalBrother.jpg" alt="ChemicalBrother">
+                        </a>
+                        <div class="user-info">
+                            <a href="user/ChemicalBrother" class="username">ChemicalBrother</a>
+                            <span class="user-title">Vendedor Verificado</span>
+                            <div class="user-stats">
+                                <span>328 posts</span>
+                                <span>⭐ 4.6/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thread-content">
+                        <h3><a href="#" class="thread-link" data-thread="drugs-market">Drogas sintéticas - Pureza 99%</a></h3>
+                        <div class="thread-meta">
+                            <span class="tag drugs">Drogas</span>
+                            <span class="tag new">Nuevo</span>
+                            <span class="thread-date">Publicado hace 3 días, 11:20</span>
+                        </div>
+                        
+                        <div class="thread-excerpt">
+                            <p>Stock disponible de diversas sustancias:</p>
+                            <ul>
+                                <li>Fentanilo 99.9% pure</li>
+                                <li>MDMA cristal</li>
+                                <li>LSD 200ug</li>
+                                <li>Cocaína premium</li>
+                            </ul>
+                            <p class="price">Precio: Desde <strong>0.05 BTC/g</strong> (descuentos por cantidad)</p>
+                        </div>
+                        
+                        <div class="thread-actions">
+                            <span class="thread-views">3,024 vistas</span>
+                            <span class="thread-comments">89 comentarios</span>
+                            <a href="#" class="btn-read-more thread-link" data-thread="drugs-market">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Hilo 5 - Hacking Services -->
+                <article class="thread">
+                    <div class="thread-author">
+                        <a href="user/CyberSoldier" class="user-avatar">
+                            <img src="assets/images/CyberSoldier.jpg" alt="CyberSoldier">
+                        </a>
+                        <div class="user-info">
+                            <a href="user/CyberSoldier" class="username">CyberSoldier</a>
+                            <span class="user-title">Operador Verificado</span>
+                            <div class="user-stats">
+                                <span>212 posts</span>
+                                <span>⭐ 4.3/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="thread-content">
+                        <h3><a href="#" class="thread-link" data-thread="hacking-services">[SERVICIO] Ataques DDoS - 30Gbps garantizado</a></h3>
+                        <div class="thread-meta">
+                            <span class="tag service">Servicio</span>
+                            <span class="tag ddos">DDoS</span>
+                            <span class="tag verified">Verificado</span>
+                            <span class="thread-date">Publicado hace 4 días, 22:15</span>
+                        </div>
+                        
+                        <div class="thread-excerpt">
+                            <p>Ofrezco servicio de alquiler de botnet con las siguientes capacidades:</p>
+                            <ul>
+                                <li>30Gbps de potencia garantizada</li>
+                                <li>Más de 18,000 dispositivos infectados</li>
+                                <li>Métodos: UDP flood, SYN flood, HTTP flood</li>
+                                <li>Sin logs, totalmente anónimo</li>
+                            </ul>
+                            <p class="price">Precios: <strong>1.2 BTC/día</strong> | <strong>5.5 BTC/semana</strong> | <strong>16 BTC/mes</strong></p>
+                        </div>
+                        
+                        <div class="thread-actions">
+                            <span class="thread-views">1,876 vistas</span>
+                            <span class="thread-comments">41 comentarios</span>
+                            <a href="#" class="btn-read-more thread-link" data-thread="hacking-services">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <!-- Nueva sidebar derecha -->
+        <aside class="right-sidebar">
+            <div class="online-users-widget">
+                <h3>Usuarios activos <span class="online-count">(14)</span></h3>
+                <div class="online-users-list">
+                    <div class="user-online">
+                        <img src="assets/images/GhostProxy66.jpg" alt="GhostProxy66" class="user-online-avatar">
+                        <span class="user-online-name admin">GhostProxy66</span>
+                        <span class="user-online-status"></span>
+                    </div>
+                    
+                    <div class="user-online">
+                        <img src="assets/images/DataVendor.jpg" alt="DataVendor" class="user-online-avatar">
+                        <span class="user-online-name">DataVendor</span>
+                        <span class="user-online-status"></span>
+                    </div>
+                    
+                    <div class="user-online">
+                        <img src="assets/images/ArmsDealer.jpg" alt="ArmsDealer" class="user-online-avatar">
+                        <span class="user-online-name">ArmsDealer</span>
+                        <span class="user-online-status idle"></span>
+                    </div>
+                    
+                    <div class="user-online">
+                        <img src="assets/images/ChemicalBrother.jpg" alt="ChemicalBrother" class="user-online-avatar">
+                        <span class="user-online-name">ChemicalBrother</span>
+                        <span class="user-online-status"></span>
+                    </div>
+                    
+                    <div class="user-online">
+                        <img src="assets/images/CyberSoldier.jpg" alt="CyberSoldier" class="user-online-avatar">
+                        <span class="user-online-name">CyberSoldier</span>
+                        <span class="user-online-status"></span>
+                    </div>
+                    
+                    <div class="user-online">
+                        <img src="assets/images/SecureBuyer.jpg" alt="SecureBuyer" class="user-online-avatar">
+                        <span class="user-online-name">SecureBuyer</span>
+                        <span class="user-online-status"></span>
+                    </div>
+                    
+                    <div class="user-online">
+                        <img src="assets/images/GhostHacker.jpg" alt="GhostHacker" class="user-online-avatar">
+                        <span class="user-online-name">GhostHacker</span>
+                        <span class="user-online-status idle"></span>
+                    </div>
+                    
+                    <div class="user-online">
+                        <img src="assets/images/AnonTrader.jpg" alt="AnonTrader" class="user-online-avatar">
+                        <span class="user-online-name">AnonTrader</span>
+                        <span class="user-online-status"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="forum-rules">
+                <h3>Reglas del foro</h3>
+                <ul>
+                    <li>No preguntar por fuentes</li>
+                    <li>No estafar a otros miembros</li>
+                    <li>Comunicación cifrada</li>
+                    <li>No mencionar objetivos específicos</li>
+                    <li>Los admins tienen la última palabra</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal para mostrar contenido completo del hilo -->
+    <div class="modal" id="thread-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <div class="modal-meta" id="modal-meta"></div>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-comments" id="modal-comments"></div>
+            <div class="modal-footer">
+                <button class="btn-contact">Contactar al vendedor</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="forum-footer">
+    
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2024 DarkNet Market Simulation | Todos los derechos reservados (simulación)</p>
+            </div>
+            <div class="footer-credits">
+                <p>Desarrollado para <a href="#" target="_blank">CTF Challenge</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Datos de los hilos para el modal
+        const threadData = {
+            "nuclear-codes": {
+                title: "[SUBASTA] Maletín con códigos nucleares - Acceso completo",
+                meta: '<span class="tag nuclear-tag">ARMAMENTO</span><span class="tag premium">Premium</span><span class="tag auction">Subasta</span><span class="thread-date">Publicado 21/08, 00:32</span>',
+                author: '<a href="user/GhostProxy66.html">GhostProxy66</a>',
+                content: `
+                    <div class="thread-details">
+                        <h3>Descripción completa</h3>
+                        <div class="nuclear-auction">
+                            <p>Oferta única: Maletín físico con códigos de acceso a sistemas de defensa nuclear obtenido de fuente militar confiable.</p>
+                            <img src="assets/images/maletin.jpg" alt="ChemicalBrother" class="maletin-image">
+                            <h4>Contenido incluido:</h4>
+                            <ul>
+                                <li>Dispositivo de autenticación de dos factores (hardware token)</li>
+                                <li>Manual de procedimientos clasificados (32 páginas)</li>
+                                <li>3 códigos de activación de 256 caracteres (un solo uso cada uno)</li>
+                                <li>Coordenadas GPS de 5 instalaciones estratégicas</li>
+                                <li>Firmas digitales verificables de oficiales superiores</li>
+                            </ul>
+                            
+                            <h4>Detalles técnicos:</h4>
+                            <ul>
+                                <li><strong>Origen:</strong> Base militar en Europa del Este</li>
+                                <li><strong>Validez:</strong> Códigos activos hasta 2025</li>
+                                <li><strong>Autenticidad:</strong> Verificada por 3 expertos independientes</li>
+                            </ul>
+                            
+                            <h4>Instrucciones de subasta:</h4>
+                            <p>La subasta se realizará en los comentarios de este hilo. El último comentario con la oferta más alta antes de las <strong>00:00 UTC</strong> ganará el artículo.</p>
+                            <p class="price">Precio inicial: <strong>200,000 USD en BTC/XMR</strong></p>
+                            <p class="text-warning">⚠️ Solo ofertas serias. El ganador recibirá instrucciones de entrega segura.</p>
+                        </div>
+                    </div>
+                `,
+                comments: `
+                    <h3>Comentarios de subasta (15)</h3>
+                    <div class="auction-comment">
+                        <div class="comment-author">ShadowBroker <span class="comment-date">- hace 3 horas</span></div>
+                        <div class="comment-content">$210,000 - ¿Puedes verificar la procedencia exacta del dispositivo?</div>
+                    </div>
+                    
+                    <div class="auction-comment">
+                        <div class="comment-author">GhostProxy66 <span class="comment-date">- hace 3 horas</span></div>
+                        <div class="comment-content">@ShadowBroker - Documentación de procedencia disponible para postores serios. Contacto privado.</div>
+                    </div>
+                    
+                    <div class="auction-comment">
+                        <div class="comment-author">GeneralDark <span class="comment-date">- hace 2 horas</span></div>
+                        <div class="comment-content">$250,000 - Requiero prueba de funcionalidad antes de transferencia final.</div>
+                    </div>
+                    
+                    <div class="auction-comment">
+                        <div class="comment-author">CyberCommander <span class="comment-date">- hace 1 hora</span></div>
+                        <div class="comment-content">$275,000 - Transferencia lista. Contacto: cmdr@protonmail.com</div>
+                    </div>
+                    
+                    <div class="auction-comment">
+                        <div class="comment-author">UnknownEntity <span class="comment-date">- hace 45 minutos</span></div>
+                        <div class="comment-content">$300,000 - Sin más preguntas. Solo necesito coordenadas de entrega.</div>
+                    </div>
+                    
+                    <div class="auction-comment">
+                        <div class="comment-author">WarDog <span class="comment-date">- hace 30 minutos</span></div>
+                        <div class="comment-content">$325,000 - Envío a ubicación segura en Zurich.</div>
+                    </div>
+                    
+                    <div class="auction-comment">
+                        <div class="comment-author">GhostProxy66 <span class="comment-date">- hace 15 minutos</span></div>
+                        <div class="comment-content">⚠️ 15 minutos restantes. Oferta actual: $325k</div>
+                    </div>
+                    
+                    <div class="auction-comment auction-winner">
+                        <div class="comment-author">CyberWarlord <span class="comment-date">- hace 5 minutos</span></div>
+                        <div class="comment-content">$350,000 (GANADOR)</div>
+                        <div class="comment-hidden" style="display:none;">Clave de acceso: OPERATION-MIDNIGHT-SUN</div>
+                    </div>
+                `
+            },
+            "database-leak": {
+                title: "[VENTA] Base de datos - 50M cuentas premium",
+                meta: '<span class="tag leak">Leak</span><span class="tag verified">Verificado</span><span class="thread-date">Publicado ayer, 09:15</span>',
+                author: '<a href="user/DataVendor">DataVendor</a>',
+                content: `
+                    <div class="thread-details">
+                        <h3>Descripción completa</h3>
+                        <p>Dataset completo con emails y contraseñas de servicios premium obtenido mediante múltiples brechas de seguridad.</p>
+                        
+                        <h4>Servicios incluidos:</h4>
+                        <table class="company-table">
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Nº Cuentas</th>
+                                <th>Tasa de éxito</th>
+                            </tr>
+                            <tr>
+                                <td>Streaming (Netflix, Disney+, etc.)</td>
+                                <td>22,450,000</td>
+                                <td>91%</td>
+                            </tr>
+                            <tr>
+                                <td>Plataformas de juegos</td>
+                                <td>15,780,000</td>
+                                <td>87%</td>
+                            </tr>
+                            <tr>
+                                <td>Software profesional</td>
+                                <td>11,770,000</td>
+                                <td>83%</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Formato de entrega:</h4>
+                        <ul>
+                            <li>CSV estructurado (email:password)</li>
+                            <li>Incluye metadatos (fecha de creación, último acceso)</li>
+                            <li>Filtros personalizados disponibles</li>
+                        </ul>
+                        
+                        <div class="pricing">
+                            <h4>Opciones de compra:</h4>
+                            <ul>
+                                <li><strong>Paquete completo:</strong> 2.5 BTC</li>
+                                <li><strong>Por categoría:</strong> 0.8 BTC cada una</li>
+                                <li><strong>Muestra de 1,000 cuentas:</strong> 0.05 BTC</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                comments: `
+                    <h3>Comentarios (36)</h3>
+                    <div class="comment">
+                        <div class="comment-author">SecureBuyer <span class="comment-date">- hace 10 horas</span></div>
+                        <div class="comment-content">¿Qué porcentaje de las cuentas de streaming tienen suscripciones activas?</div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-author">DataVendor <span class="comment-date">- hace 9 horas</span></div>
+                        <div class="comment-content">@SecureBuyer - Aproximadamente el 68% de las cuentas de streaming están activas actualmente.</div>
+                    </div>
+                `
+            },
+            "weapons-sale": {
+                title: "[ENVÍO] Armas cortas y largas - Stock actualizado",
+                meta: '<span class="tag weapons">Armas</span><span class="tag shipping">Envío</span><span class="thread-date">Publicado hace 2 días, 18:40</span>',
+                author: '<a href="user/ArmsDealer">ArmsDealer</a>',
+                content: `
+                    <div class="thread-details">
+                        <h3>Descripción completa</h3>
+                        <p>Venta de armas de fuego con envío discreto a toda Europa. Todos los productos son nuevos o en excelente estado.</p>
+                        
+                        <h4>Inventario actual:</h4>
+                        <table class="company-table">
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Tipo</th>
+                                <th>Calibre</th>
+                                <th>Precio (BTC)</th>
+                            </tr>
+                            <tr>
+                                <td>Glock 17</td>
+                                <td>Pistola</td>
+                                <td>9mm</td>
+                                <td>1.5</td>
+                            </tr>
+                            <tr>
+                                <td>Glock 19</td>
+                                <td>Pistola</td>
+                                <td>9mm</td>
+                                <td>1.6</td>
+                            </tr>
+                            <tr>
+                                <td>AK-47</td>
+                                <td>Rifle</td>
+                                <td>7.62×39mm</td>
+                                <td>3.2</td>
+                            </tr>
+                            <tr>
+                                <td>AR-15</td>
+                                <td>Rifle</td>
+                                <td>5.56×45mm</td>
+                                <td>3.5</td>
+                            </tr>
+                            <tr>
+                                <td>MP5</td>
+                                <td>Subfusil</td>
+                                <td>9mm</td>
+                                <td>4.0</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Detalles de envío:</h4>
+                        <ul>
+                            <li>Métodos de ocultación avanzados</li>
+                            <li>Entrega en 5-7 días hábiles (EU)</li>
+                            <li>Garantía de entrega o reembolso</li>
+                            <li>Opciones de munición disponibles</li>
+                        </ul>
+                    </div>
+                `,
+                comments: `
+                    <h3>Comentarios (63)</h3>
+                    <div class="comment">
+                        <div class="comment-author">AnonBuyer <span class="comment-date">- hace 1 día</span></div>
+                        <div class="comment-content">¿Tienes disponibilidad de silenciadores para Glock 19?</div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-author">ArmsDealer <span class="comment-date">- hace 1 día</span></div>
+                        <div class="comment-content">@AnonBuyer - Sí, silenciadores disponibles por 0.8 BTC adicionales.</div>
+                    </div>
+                `
+            },
+            "drugs-market": {
+                title: "Drogas sintéticas - Pureza 99%",
+                meta: '<span class="tag drugs">Drogas</span><span class="tag new">Nuevo</span><span class="thread-date">Publicado hace 3 días, 11:20</span>',
+                author: '<a href="user/ChemicalBrother">ChemicalBrother</a>',
+                content: `
+                    <div class="thread-details">
+                        <h3>Descripción completa</h3>
+                        <p>Stock disponible de sustancias de alta pureza, testeadas en laboratorio independiente.</p>
+                        
+                        <h4>Productos disponibles:</h4>
+                        <table class="company-table">
+                            <tr>
+                                <th>Sustancia</th>
+                                <th>Pureza</th>
+                                <th>Formato</th>
+                                <th>Precio (BTC/g)</th>
+                            </tr>
+                            <tr>
+                                <td>Fentanilo</td>
+                                <td>99.9%</td>
+                                <td>Polvo</td>
+                                <td>0.08</td>
+                            </tr>
+                            <tr>
+                                <td>MDMA</td>
+                                <td>99%</td>
+                                <td>Cristal</td>
+                                <td>0.12</td>
+                            </tr>
+                            <tr>
+                                <td>LSD</td>
+                                <td>200ug</td>
+                                <td>Blotters</td>
+                                <td>0.05</td>
+                            </tr>
+                            <tr>
+                                <td>Cocaína</td>
+                                <td>92%</td>
+                                <td>Polvo</td>
+                                <td>0.15</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Opciones de envío:</h4>
+                        <ul>
+                            <li><strong>Europa:</strong> 3-5 días (método stealth)</li>
+                            <li><strong>EEUU:</strong> 7-10 días (doble ocultación)</li>
+                            <li><strong>Resto del mundo:</strong> 10-14 días</li>
+                        </ul>
+                        
+                        <p class="text-warning">⚠️ Mínimo de compra: 10g o equivalente</p>
+                    </div>
+                `,
+                comments: `
+                    <h3>Comentarios (89)</h3>
+                    <div class="comment">
+                        <div class="comment-author">PharmaBuyer <span class="comment-date">- hace 2 días</span></div>
+                        <div class="comment-content">¿Puedes hacer envío a Australia? Necesito 50g de MDMA.</div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-author">ChemicalBrother <span class="comment-date">- hace 2 días</span></div>
+                        <div class="comment-content">@PharmaBuyer - Sí, pero con recargo de 0.2 BTC por envío especial.</div>
+                    </div>
+                `
+            },
+            "hacking-services": {
+                title: "[SERVICIO] Ataques DDoS - 30Gbps garantizado",
+                meta: '<span class="tag service">Servicio</span><span class="tag ddos">DDoS</span><span class="tag verified">Verificado</span><span class="thread-date">Publicado hace 4 días, 22:15</span>',
+                author: '<a href="user/CyberSoldier">CyberSoldier</a>',
+                content: `
+                    <div class="thread-details">
+                        <h3>Descripción completa</h3>
+                        <p>Servicio profesional de ataques DDoS con potencia garantizada y panel de control en tiempo real.</p>
+                        
+                        <h4>Especificaciones técnicas:</h4>
+                        <ul>
+                            <li><strong>Potencia:</strong> 30Gbps garantizados (picos de hasta 45Gbps)</li>
+                            <li><strong>Botnet:</strong> 18,000+ dispositivos (IoT, servidores, routers)</li>
+                            <li><strong>Cobertura:</strong> 35 países (principalmente EU, US, Asia)</li>
+                            <li><strong>Métodos:</strong> UDP flood, SYN flood, HTTP flood, DNS amplification</li>
+                        </ul>
+                        
+                        <h4>Panel de control:</h4>
+                        <ul>
+                            <li>Monitorización en tiempo real del ataque</li>
+                            <li>Estadísticas detalladas (tráfico, paquetes, duración)</li>
+                            <li>Configuración personalizada de parámetros</li>
+                            <li>API para integración con otros sistemas</li>
+                        </ul>
+                        
+                        <h4>Precios:</h4>
+                        <table class="company-table">
+                            <tr>
+                                <th>Duración</th>
+                                <th>Potencia</th>
+                                <th>Precio (BTC)</th>
+                            </tr>
+                            <tr>
+                                <td>1 hora</td>
+                                <td>30Gbps</td>
+                                <td>1.2</td>
+                            </tr>
+                            <tr>
+                                <td>24 horas</td>
+                                <td>25Gbps</td>
+                                <td>5.5</td>
+                            </tr>
+                            <tr>
+                                <td>1 semana</td>
+                                <td>20Gbps</td>
+                                <td>16.0</td>
+                            </tr>
+                        </table>
+                        
+                        <p class="text-warning">⚠️ Servicio solo para objetivos aprobados. No ataques a infraestructura crítica.</p>
+                    </div>
+                `,
+                comments: `
+                    <h3>Comentarios (41)</h3>
+                    <div class="comment">
+                        <div class="comment-author">AnonClient <span class="comment-date">- hace 3 días</span></div>
+                        <div class="comment-content">¿Qué tasa de éxito tienen contra sitios protegidos por Cloudflare?</div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-author">CyberSoldier <span class="comment-date">- hace 3 días</span></div>
+                        <div class="comment-content">@AnonClient - El 80% de los ataques superan protecciones básicas de Cloudflare. Para Enterprise necesitamos configuración especial.</div>
+                    </div>
+                `
+            }
+        };
+
+        // Funcionalidad del modal
+        document.querySelectorAll('.thread-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const threadId = this.getAttribute('data-thread');
+                const thread = threadData[threadId];
+                
+                document.getElementById('modal-title').innerHTML = thread.title;
+                document.getElementById('modal-meta').innerHTML = `${thread.author} | ${thread.meta}`;
+                document.getElementById('modal-body').innerHTML = thread.content;
+                document.getElementById('modal-comments').innerHTML = thread.comments;
+                
+                document.getElementById('thread-modal').style.display = 'block';
+            });
+        });
+
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('thread-modal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('thread-modal')) {
+                document.getElementById('thread-modal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

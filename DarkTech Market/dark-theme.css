@@ -1,0 +1,21 @@
+/* Variables adicionales para tema oscuro */
+:root {
+    --background: #121212;
+    --background-light: #1e1e1e;
+    --background-lighter: #252525;
+    --text: #e0e0e0;
+    --text-dim: #9e9e9e;
+}
+
+/* Ajustes específicos para mejorar contraste */
+.thread {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.widget {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-read-more {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
